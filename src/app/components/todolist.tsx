@@ -123,6 +123,7 @@ export default function TodoList() {
         completed: updatedTasks.find((task) => task.id === id)?.completed,
       });
     } catch (error) {
+      console.error('Error updating task status:', error);
       Swal.fire('Error', 'Failed to update task status.', 'error');
     }
   };
@@ -145,6 +146,7 @@ export default function TodoList() {
       setTasks((prev) => prev.filter((task) => task.id !== id));
       Swal.fire('Deleted!', 'Mission removed from database.', 'success');
     } catch (error) {
+      console.error('Error deleting task:', error);
       Swal.fire('Error', 'Could not delete task.', 'error');
     }
   };
@@ -192,13 +194,14 @@ export default function TodoList() {
         );
         Swal.fire('Updated!', 'Mission parameters updated.', 'success');
       } catch (error) {
+        console.error('Error updating task:', error);
         Swal.fire('Error', 'Update failed.', 'error');
       }
     }
   };
 
   return (
-    <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-mono">
+    <div className="min-h-screen px-4 py-10 bg-[radial-gradient(circle_at_center,_#0ff_1px,_#111_1px)] [background-size:20px_20px] text-white font-mono">
       <h1 className="text-4xl text-center font-bold mb-6 text-cyan-400 neon-glow">
         🚀 Mission Control Center
       </h1>
@@ -235,7 +238,7 @@ export default function TodoList() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className={`border-2 p-4 rounded-lg ${taskColor}`}
+                className={`border-2 p-4 rounded-lg ${taskColor} shadow-[0_0_10px_#0ff5]`}
               >
                 <div className="flex justify-between items-center mb-2">
                   <span

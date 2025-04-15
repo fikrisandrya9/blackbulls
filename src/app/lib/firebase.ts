@@ -1,13 +1,13 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCgNp4aFtIVPcAn250bW571etKpVnr0EPg",
+  apiKey: "AIzaSyCgNp4AfTlVPcAn250bW571etKpVnr0EPg",
   authDomain: "fikri111.firebaseapp.com",
   projectId: "fikri111",
-  storageBucket: "fikri111.firebasestorage.app",
+  storageBucket: "fikri111.appspot.com",
   messagingSenderId: "228073698402",
-  appId: "1:228073698402:web:c469de4a445d8b36938d3b",
+  appId: "1:228073698402:web:c469dea445d8b36938d3b",
   measurementId: "G-KHSMF201NH",
 };
 
